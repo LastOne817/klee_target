@@ -2,6 +2,7 @@
 #define __BIGINT__
 
 #define BIGINT_NOT_VALID -1
+#define NORMALIZATION_FAILED -2
 
 #define MAX(n,m) ((n)>(m))?(n):(m)
 #define MIN(n,m) ((n)<(m))?(n):(m)
@@ -73,5 +74,12 @@ char* to_str(BIGINT* src);
    Deallocated Memory after use
    */
 int free_big(BIGINT* num);
+
+/*
+   Normalize Big Integer Array
+   Reallocate Memory to fit
+   Returns whether Success
+   */
+int normalize_big(int* val, int box_size);
 
 #endif
